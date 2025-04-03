@@ -1,5 +1,5 @@
 import { use } from "react";
-import { UserContext } from "../context/user";
+import { UserContext } from "../context/User";
 
 export default function UserContextExample()
 {

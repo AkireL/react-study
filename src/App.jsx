@@ -1,10 +1,10 @@
 import reactLogo from './assets/react.svg'
 import './App.css'
-import { Form } from './components/Form'
-import UseExample from './components/useExample'
-import UserContextExample from './class/UseContextExample'
+import { Form } from './basic/components/Form'
+import UseExample from './basic/components/useExample'
+import UserContextExample from './basic/class/UseContextExample'
 import { use } from 'react'
-import { UserContext } from "./context/user";
+import { UserContext } from "./basic/context/User";
 
 function App() {
     const {name, isLogged, updateUser} = use(UserContext);

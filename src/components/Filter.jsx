@@ -2,24 +2,19 @@ import { useState } from "react"
 import { useFilter } from "../uses/UseFilter";
 
 function Filter() {
-    const { setFilters } = useFilter();
-
-    const [minPrice, setPriceMin] = useState(0);
-    const [category, setCategory] = useState('all');
+    const { filters, setFilters } = useFilter();
 
     const onChangePrice = (event) => {
-        setPriceMin(event.target.value);
         setFilters({
             minPrice: event.target.value,
-            category: category,
+            category: filters.category,
         })
     }
 
     const onChangeCategory = (event) => {
-        setCategory(event.target.value);
         setFilters({
             category: event.target.value,
-            minPrice: minPrice,
+            minPrice: filters.minPrice,
         });
     }
     return (
@@ -31,14 +26,14 @@ function Filter() {
                     type="range"
                     min='0'
                     max='1000'
-                    value={minPrice}
+                    value={filters.minPrice}
                     onChange={onChangePrice}
                 />
-                <span>$ {minPrice}</span>
+                <span>$ {filters.minPrice}</span>
             </div>
             <div>
                 <label htmlFor="category">Categoría</label>
-                <select id="category" value={category} onChange={onChangeCategory}>
+                <select id="category" value={filters.category} onChange={onChangeCategory}>
                     <option value="all">Todas</option>
                     <option value="laptops">Laptops</option>
                     <option value="smartphones">Celulares</option>

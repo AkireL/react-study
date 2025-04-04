@@ -1,4 +1,8 @@
-export function Footer({filter}){
+import { useFilter } from "../uses/UseFilter"
+
+export function Footer(){
+    const { filter } = useFilter();
+
     return (
         <footer className="footer">
             {

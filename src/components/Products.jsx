@@ -8,7 +8,7 @@ export function Products({products})
         <main className="products">
             <ul>
             {
-                products.map(product => (
+                products?.map(product => (
                     <li key={product.id}>
                         <img
                             src={product.thumbnail}

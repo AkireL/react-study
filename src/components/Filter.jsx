@@ -1,13 +1,15 @@
 import { useState } from "react"
+import { useFilter } from "../uses/UseFilter";
 
-function Filter({setFilter}) {
+function Filter() {
+    const { setFilters } = useFilter();
 
-    const [priceMin, setPriceMin] = useState(0);
+    const [minPrice, setPriceMin] = useState(0);
     const [category, setCategory] = useState('all');
 
     const onChangePrice = (event) => {
         setPriceMin(event.target.value);
-        setFilter({
+        setFilters({
             minPrice: event.target.value,
             category: category,
         })
@@ -15,9 +17,9 @@ function Filter({setFilter}) {
 
     const onChangeCategory = (event) => {
         setCategory(event.target.value);
-        setFilter({
+        setFilters({
             category: event.target.value,
-            minPrice: priceMin,
+            minPrice: minPrice,
         });
     }
     return (
@@ -29,13 +31,13 @@ function Filter({setFilter}) {
                     type="range"
                     min='0'
                     max='1000'
-                    value={priceMin}
+                    value={minPrice}
                     onChange={onChangePrice}
                 />
-                <span>$ {priceMin}</span>
+                <span>$ {minPrice}</span>
             </div>
             <div>
-                <label htmlFor="categoria">Categoría</label>
+                <label htmlFor="category">Categoría</label>
                 <select id="category" value={category} onChange={onChangeCategory}>
                     <option value="all">Todas</option>
                     <option value="laptops">Laptops</option>
@@ -46,12 +48,12 @@ function Filter({setFilter}) {
     )
 }
 
-export function Header({setFilter})
+export function Header()
 {
     return (
         <header>
             <h1>React Shop</h1>
-            <Filter setFilter={setFilter}></Filter>
+            <Filter></Filter>
         </header>
     )
 }

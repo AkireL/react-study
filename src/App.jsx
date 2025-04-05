@@ -4,6 +4,8 @@ import { items } from "./mocks/products.json"
 import { Header } from "./components/Filter";
 import { Footer } from "./components/Footer";
 import { useFilter } from "./uses/UseFilter";
+import { Cart } from "./components/Cart";
+import { CartContextProvider } from './context/CartContext.jsx'
 
 
 function App() {
@@ -13,12 +15,13 @@ function App() {
   const filteredProducts = filterProducts(products);
 
   return (
-    <>
+    <CartContextProvider>
       <h1>Shopping card</h1>
       <Header></Header>
+      <Cart></Cart>
       <Products products={filteredProducts}></Products>
       <Footer></Footer>
-    </>
+    </CartContextProvider>
   )
 }
 

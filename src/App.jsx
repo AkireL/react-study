@@ -7,7 +7,6 @@ import { useFilter } from "./uses/UseFilter";
 import { Cart } from "./components/Cart";
 import { CartContextProvider } from './context/CartContext.jsx'
 
-
 function App() {
   const [products] = useState(items)
   const { filterProducts } = useFilter()

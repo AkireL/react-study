@@ -1,6 +1,5 @@
 import React, { use } from "react";
 import { AddToCartIcon, RemoveFromCartIcon } from "./Icons";
-import './../product.css'
 import { CartContext } from "../context/CartContext"
 
 export function Products({products})

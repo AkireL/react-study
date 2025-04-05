@@ -33,7 +33,7 @@ export function Cart(){
     
     
     return (
-        <div>
+        <>
             <label className="cart-button" htmlFor={cartCheckboxId}>
                 <CartIcon></CartIcon>
             </label>
@@ -60,6 +60,6 @@ export function Cart(){
                 : <p>Selecciona un producto del catálogo</p>
                 }
             </aside>
-        </div>
+        </>
     )
 }

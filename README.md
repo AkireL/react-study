@@ -1,4 +1,7 @@
 Conceptos
+**use or useContext**: Es un hook de React que permite acceder a valores de un contexto sin necesidad de pasar props manualmente a través de múltiples niveles de componentes.
+
+
 
 **preload:** Se usa cuando quieres que se precargue algo para que se tenga disponible cuando se requiera
 Por ejemplo se puede cargar estilos y cuando un componente especifico lo requiera estos ya esten disponibles y los aplique al estilo del componente y no se note el cambio.
